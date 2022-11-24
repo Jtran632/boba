@@ -1,11 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, MV boli;
 }
 
+
+.navItems:hover {
+  transform: translate(-4px, -4px)
+}
+
+.menu{
+  margin-top: 1rem;
+  padding: 4rem;
+  font-family: MV boli;
+  margin-bottom: 1rem;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -18,9 +32,17 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    
   }
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: #FFF3D9;
+  }
+  header {
+    background: #ffe5ea;
+    font-family: MV boli;
+  }
+  footer {
+    background: #ffe5ea;
   }
 }
