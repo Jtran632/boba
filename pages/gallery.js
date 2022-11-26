@@ -4,8 +4,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
-export default function Home() {
+export default function Gallery() {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,18 +16,7 @@ export default function Home() {
       <Header />
 
       <main className={styles.main}>
-        <h1 className=" font-Heaters text-9xl pb-10">Welcome</h1>
 
-        <Image
-          src={"/1.png"}
-          alt={"image"}
-          width={350}
-          height={200}
-          className="border-straight border-4 border-white rounded-full p-1"
-        ></Image>
-        <Link href={"/explore"}>
-          <h1 className=" font-Heaters text-9xl pt-14 navItems">Explore</h1>
-        </Link>
       </main>
 
       <Footer />

@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import NavBar from "../components/NavBar";
-export default function Home() {
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+export default function Menu() {
   const flavors = [
     "Honeydew",
     "Lychee",
@@ -36,6 +36,7 @@ export default function Home() {
     "Sesame",
   ];
   const sweetness = [0, 25, 50, 75, 100];
+  const ice = ["None", "Less", "Regular", "Extra"];
   const tea = ["Black", "Green", "Oolong", "White"];
   const toppings = [
     "Tapioca Pearls",
@@ -47,21 +48,19 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Asdf Boba</title>
         <meta name="" content="header" />
         <link rel="icon" href="/milkTea.png" />
       </Head>
 
-      <header className={styles.header}>
-        <NavBar />
-      </header>
+      <Header />
 
       <main className={styles.main}>
-        <div className="grid menu items-center justify-center grid-cols-3 border-8 border-white">
-          <div className="gap-y-10 grid col-span-2">
+        <div className="flex contentText items-center">
+          <div className="gap-y-2 grid col-span-2">
             <div>
-              <h1 className="text-5xl justify-center flex">Flavors</h1>
-              <ul className="grid grid-cols-5 gap-x-2">
+              <h1 className="text-7xl flex itemTitle">Flavors</h1>
+              <ul className="grid grid-cols-3 md:grid-cols-5 gap-x-2">
                 {flavors.map((i) => (
                   <li key={i}>
                     {"- "}
@@ -70,10 +69,11 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+
             <div className="flex">
               <div className="grid grid-cols-2">
                 <ul>
-                  <h1 className="text-4xl ">Toppings</h1>
+                  <h1 className="text-5xl itemTitle">Toppings</h1>
                   {toppings.map((i) => (
                     <li key={i}>
                       {"- "}
@@ -83,7 +83,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h1 className="text-4xl">Tea</h1>
+                <h1 className="text-5xl itemTitle">Tea Base</h1>
                 <ul className="grid grid-cols-1">
                   {tea.map((i) => (
                     <li key={i}>- {i}</li>
@@ -91,28 +91,37 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            <ul className="">
-              <h1 className="text-4xl">Sweetness</h1>
-              <ul className="flex gap-4">
+
+            <ul>
+              <h1 className="text-5xl itemTitle">Sweetness</h1>
+              <ul className="flex gap-1">
                 {sweetness.map((i) => (
                   <li key={i}>- {i}%</li>
                 ))}
               </ul>
             </ul>
+            <ul>
+              <h1 className="text-5xl itemTitle">Ice</h1>
+              <ul className="flex gap-1">
+                {ice.map((i) => (
+                  <li key={i}>- {i}</li>
+                ))}
+              </ul>
+            </ul>
           </div>
-          <div className="col-span-1">
-            <Image
-              src={"/boba.jpg"}
-              alt="image"
-              position="fixed"
-              width={400}
-              height={200}
-              className="img1"
-            ></Image>
-          </div>
+
+          <Image
+            src={"/boba.jpg"}
+            alt="image"
+            position="fixed"
+            width={400}
+            height={200}
+            className="menuImg"
+          ></Image>
         </div>
       </main>
-      <footer className={styles.footer}></footer>
+
+      <Footer />
     </div>
   );
 }
