@@ -17,5 +17,5 @@ model Drink {
   teaBase String
   sweetness Int
   ice String
-  cost Decimal
+  cost Float
 }

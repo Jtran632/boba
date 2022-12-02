@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import { PrismaClient } from "@prisma/client";
 // const prisma = new PrismaClient()
-export default function Menu() {
+export default function Order() {
   const flavors = [
     "Honeydew",
     "Lychee",
@@ -66,6 +66,9 @@ export default function Menu() {
     }
     if (selectedTopping.length > 0) {
       selectedTopping.map((i) => (t = t + i + " "));
+    }
+    else{
+      t = "None"
     }
     if (selectedTopping.length > 1) {
       cost = cost + selectedTopping.length * 0.5 - 0.5;
@@ -133,11 +136,11 @@ export default function Menu() {
       <Header />
 
       <main className={styles.main}>
-        <div className="gap-5 w-3/4 mt-4 border-4 bg-pink-200">
-          <div className="grid grid-cols-3 p-4">
+        <div className="w-3/4 mt-4 border-8 border-green-300 border-double bg-green-100">
+          <div className="grid grid-cols-3 p-2">
             <form
               type="submit"
-              className=" col-start-1 col-end-3 border-4 bg-yellow-100 text-center"
+              className=" col-start-1 col-end-3 border-4 border-double bg-yellow-200 text-center"
             >
               <label className="text-xs">
                 <div>
@@ -277,7 +280,7 @@ export default function Menu() {
               </label>
             </form>
 
-            <div className="text-xs m-1 p-4 bg-blue-200">
+            <div className="text-xs p-4 bg-blue-200 border-4 border-double">
               <h1 className="text-center text-xl font-semibold">Selections</h1>
               <h1 className="text-center border-2 bg-blue-300">Flavors</h1>
               <ul className="border-2 mb-5 p-2 grid grid-cols-1 md:grid-cols-3 bg-pink-100 text-center">
@@ -309,7 +312,7 @@ export default function Menu() {
             </div>
           </div>
           <button
-            className="grid border-2 p-2 mt-2  bg-white w-full"
+            className="grid border-2 p-2 mt-2 border-gray-400 bg-white w-full"
             onClick={saveDrink}
           >
             Submit
