@@ -18,14 +18,15 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className=" font-Heaters text-9xl pb-10">Welcome</h1>
-
-        <Image
-          src={"/1.png"}
-          alt={"image"}
-          width={350}
-          height={200}
-          className="border-straight border-4 border-white rounded-full p-1"
-        ></Image>
+        <Link href={'/menu'}>
+          <Image
+            src={"/1.png"}
+            alt={"image"}
+            width={350}
+            height={200}
+            className="border-straight border-4 hover:border-black border-white rounded-full p-1 duration-500"
+          ></Image>
+        </Link>
         <Link href={"/explore"}>
           <h1 className=" font-Heaters text-9xl pt-14 navItems">Explore</h1>
         </Link>

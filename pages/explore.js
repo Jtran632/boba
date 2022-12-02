@@ -17,9 +17,6 @@ export default function Explore() {
 
       <main className={styles.main}>
         <div className="grid font-Heaters text-center text-7xl md:text-9xl">
-          <Link href={"/"} className="navItems">
-            Home
-          </Link>
           <Link href={"/menu"} className="navItems">
             Menu
           </Link>

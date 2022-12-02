@@ -16,10 +16,10 @@ export default function About() {
       <Header />
 
       <main className={styles.main}>
-        <ul className="grid p-20">
-          <li>
+        <ul className="grid grid-cols-5 p-10">
+          <li className=" col-start-2 col-end-5">
             <h1 className="font-Heaters text-7xl text-center">History</h1>
-            <p1 className="font-serif">
+            <p className="font-serif">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -30,7 +30,27 @@ export default function About() {
               containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.
-            </p1>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
           </li>
         </ul>
       </main>

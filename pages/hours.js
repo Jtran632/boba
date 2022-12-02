@@ -87,7 +87,7 @@ export default function Hours() {
                   alt="image"
                   width={300}
                   height={300}
-                 className="rotate-12 scale-75 hover:-rotate-0"
+                 className="rotate-12 scale-75 hover:-rotate-0 duration-500"
                 ></Image>
               </div>
             </li>

@@ -59,8 +59,8 @@ export default function Menu() {
         <div className="flex contentText items-center">
           <div className="gap-y-2 grid col-span-2">
             <div>
-              <h1 className="text-7xl flex itemTitle">Flavors</h1>
-              <ul className="grid grid-cols-3 md:grid-cols-5 gap-x-2">
+              <h1 className="text-6xl md:text-7xl flex itemTitle">Flavors</h1>
+              <ul className="grid grid-cols-3 md:grid-cols-5 gap-x-2 text-sm md:text-base">
                 {flavors.map((i) => (
                   <li key={i}>
                     {"- "}
@@ -75,7 +75,7 @@ export default function Menu() {
                 <ul>
                   <h1 className="text-5xl itemTitle">Toppings</h1>
                   {toppings.map((i) => (
-                    <li key={i}>
+                    <li key={i} className="text-sm md:text-base">
                       {"- "}
                       {i}
                     </li>
@@ -84,7 +84,7 @@ export default function Menu() {
               </div>
               <div>
                 <h1 className="text-5xl itemTitle">Tea Base</h1>
-                <ul className="grid grid-cols-1">
+                <ul className="grid grid-cols-1 text-sm md:text-base">
                   {tea.map((i) => (
                     <li key={i}>- {i}</li>
                   ))}
@@ -94,7 +94,7 @@ export default function Menu() {
 
             <ul>
               <h1 className="text-5xl itemTitle">Sweetness</h1>
-              <ul className="flex gap-1">
+              <ul className="flex gap-1 text-sm md:text-base">
                 {sweetness.map((i) => (
                   <li key={i}>- {i}%</li>
                 ))}
@@ -102,22 +102,31 @@ export default function Menu() {
             </ul>
             <ul>
               <h1 className="text-5xl itemTitle">Ice</h1>
-              <ul className="flex gap-1">
+              <ul className="flex gap-1 text-sm md:text-base">
                 {ice.map((i) => (
                   <li key={i}>- {i}</li>
                 ))}
               </ul>
             </ul>
           </div>
-
-          <Image
-            src={"/boba.jpg"}
-            alt="image"
-            position="fixed"
-            width={400}
-            height={200}
-            className="menuImg"
-          ></Image>
+          <div>
+            <Image
+              src={"/tien.png"}
+              alt="image"
+              position="fixed"
+              width={350}
+              height={200}
+              className="menuImg"
+            ></Image>
+            <Image
+              src={"/boba.jpg"}
+              alt="image"
+              position="fixed"
+              width={250}
+              height={200}
+              className="menuImg"
+            ></Image>
+          </div>
         </div>
       </main>
 

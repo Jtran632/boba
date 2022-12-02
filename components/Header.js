@@ -23,9 +23,6 @@ export default function Header() {
         </div>
         <ul className="flex items-center gap-1 md:gap-5 text-xs md:text-base">
           <li className="headerItem">
-            <Link href={"/"}>Home</Link>
-          </li>
-          <li className="headerItem">
             {" "}
             <Link href={"/menu"}>Menu</Link>
           </li>
