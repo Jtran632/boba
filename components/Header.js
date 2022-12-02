@@ -29,13 +29,21 @@ export default function Header() {
           <li className="headerItem">
             <Link href={"/hours"}>Hours/Locations</Link>
           </li>
-          <li className="headerItem">
+          {/* <li className="headerItem">
             {" "}
             <Link href={"/gallery"}>Gallery</Link>
-          </li>
+          </li> */}
           <li className="headerItem">
             {" "}
             <Link href={"/about"}>About</Link>
+          </li>
+          <li className="headerItem">
+            {" "}
+            <Link href={"/orderDrink"}>Order</Link>
+          </li>
+          <li className="headerItem">
+            {" "}
+            <Link href={"/cart"}>Cart</Link>
           </li>
         </ul>
       </div>

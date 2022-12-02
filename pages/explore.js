@@ -23,8 +23,11 @@ export default function Explore() {
           <Link href={"/hours"} className="navItems">
             Hours/Locations
           </Link>
-          <Link href={"/gallery"} className="navItems">
+          {/* <Link href={"/gallery"} className="navItems">
             Gallery{" "}
+          </Link> */}
+          <Link href={"/orderDrink"} className="navItems">
+            Order Now
           </Link>
           <Link href={"/about"} className="navItems">
             About
