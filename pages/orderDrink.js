@@ -4,9 +4,12 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { PrismaClient } from "@prisma/client";
 // const prisma = new PrismaClient()
 export default function Order() {
+  const notify = () => toast("Order Recieved!!");
   const flavors = [
     "Honeydew",
     "Lychee",
@@ -48,8 +51,6 @@ export default function Order() {
     "Pudding",
     "Popping Boba",
   ];
-
-  const [drinkData, setDrinkData] = useState({});
   const [selectedFlavor, setSelectedFlavor] = useState([]);
   const [selectedTopping, setSelectedTopping] = useState([]);
   const [selectedTeaBase, setSelectedTeaBase] = useState("Black");
@@ -66,34 +67,33 @@ export default function Order() {
     }
     if (selectedTopping.length > 0) {
       selectedTopping.map((i) => (t = t + i + " "));
-    }
-    else{
-      t = "None"
+    } else {
+      t = "None";
     }
     if (selectedTopping.length > 1) {
       cost = cost + selectedTopping.length * 0.5 - 0.5;
     }
-    return setDrinkData({
+    return {
       flavors: f,
       toppings: t,
       teaBase: selectedTeaBase,
       sweetness: selectedSweetness,
       ice: selectedIce,
       cost: cost,
-    });
+    };
   }
   /*bugged have to click button twice when entering page or refresh*/
   async function saveDrink() {
-    checkDrinkSubmit()
-    console.log(drinkData)
+    var data = checkDrinkSubmit();
     const response = await fetch("/api/drinks", {
       method: "POST",
-      body: JSON.stringify(drinkData),
+      body: JSON.stringify(data),
     });
     if (!response.ok) {
       alert("Bad request");
     } else if (response.ok) {
-      alert("Order Received");
+      // alert("Order Received");
+      notify()
       return await response.json();
     }
   }
@@ -136,7 +136,16 @@ export default function Order() {
       <Header />
 
       <main className={styles.main}>
-        <div className="w-3/4 mt-4 border-8 border-green-300 border-double bg-green-100">
+        <ToastContainer
+          position="bottom-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          theme="colored"
+        />
+        <div className="w-3/4 mt-4 border-8 border-green-300 border-double bg-green-100 font-mono">
           <div className="grid grid-cols-3 p-2">
             <form
               type="submit"
