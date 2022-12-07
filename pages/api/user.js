@@ -29,7 +29,7 @@ export default async (req, res) => {
       },
     });
     console.log(createDrink);
-    res.json({body: createDrink, msg: "Success Order"});
+    res.json({ body: createDrink, msg: "Success Order" });
   } else if (req.method === "DELETE") {
     const data = JSON.parse(req.body);
     console.log(data);
@@ -39,9 +39,9 @@ export default async (req, res) => {
       },
     });
     // console.log(createDrink);
-    res.json({body: createDrink, msg: "Order Deleted"});
+    res.json({ body: createDrink, msg: "Order Deleted" });
   } else if (req.method === "GET") {
-    const createDrink = await prisma.Drink.findMany();
+    const createUser = await prisma.Drink.findMany();
     res.json(createDrink);
   }
 };

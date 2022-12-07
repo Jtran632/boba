@@ -18,4 +18,15 @@ model Drink {
   sweetness Int
   ice String
   cost Float
+  userId String 
+  user User @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id String @id @default(cuid())
+  name String
+  email String @unique
+  password String
+  drinks Drink[]
+
 }

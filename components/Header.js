@@ -2,9 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import { useLoginContext } from "../components/loginContext";
 export default function Header() {
+  const { loggedIn } = useLoginContext();
   return (
-    
     <header className={styles.header}>
       <div className="flex place-content-between items-center">
         <div>
@@ -37,14 +38,30 @@ export default function Header() {
             {" "}
             <Link href={"/about"}>About</Link>
           </li>
-          <li className="headerItem">
-            {" "}
-            <Link href={"/orderDrink"}>Order</Link>
-          </li>
-          <li className="headerItem">
-            {" "}
-            <Link href={"/cart"}>Cart</Link>
-          </li>
+          {loggedIn.logged === true ? (
+            <li className="headerItem">
+              {" "}
+              <Link href={"/orderDrink"}>Order</Link>
+            </li>
+          ) : (
+            <></>
+          )}
+          {loggedIn.logged === true ? (
+            <li className="headerItem">
+              {" "}
+              <Link href={"/cart"}>Cart</Link>
+            </li>
+          ) : (
+            <></>
+          )}
+          {loggedIn.logged === false? (
+            <li className="headerItem">
+              {" "}
+              <Link href={"/login"}>Login</Link>
+            </li>
+          ) : (
+            <></>
+          )}
         </ul>
       </div>
     </header>
